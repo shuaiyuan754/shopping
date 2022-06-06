@@ -27,6 +27,13 @@ public class ShoppingCarDataBean implements Cloneable{
         this.datas = datas;
     }
 
+    @Override
+    public String toString() {
+        return "ShoppingCarDataBean{" +
+                "code=" + code +
+                ", datas=" + datas +
+                '}';
+    }
 
     public static class DatasBean implements Cloneable{
 
@@ -78,7 +85,15 @@ public class ShoppingCarDataBean implements Cloneable{
             this.goods = goods;
         }
 
-
+        @Override
+        public String toString() {
+            return "DatasBean{" +
+                    "store_id='" + store_id + '\'' +
+                    ", store_name='" + store_name + '\'' +
+                    ", isSelect_shop=" + isSelect_shop +
+                    ", goods=" + goods +
+                    '}';
+        }
 
         public static class GoodsBean {
 
@@ -135,6 +150,18 @@ public class ShoppingCarDataBean implements Cloneable{
 
             public void setGoods_price(String goods_price) {
                 this.goods_price = goods_price;
+            }
+
+            @Override
+            public String toString() {
+                return "GoodsBean{" +
+                        "goods_id='" + goods_id + '\'' +
+                        ", goods_image='" + goods_image + '\'' +
+                        ", goods_name='" + goods_name + '\'' +
+                        ", goods_num='" + goods_num + '\'' +
+                        ", goods_price='" + goods_price + '\'' +
+                        ", isSelect=" + isSelect +
+                        '}';
             }
         }
     }

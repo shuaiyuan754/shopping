@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,7 @@ import butterknife.OnClick;
  *           5.商品数量加减；
  */
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     @BindView(R.id.tv_titlebar_center)
     TextView tvTitlebarCenter;
@@ -181,6 +183,8 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         ShoppingCarDataBean shoppingCarDataBean = gson.fromJson(shoppingCarData, ShoppingCarDataBean.class);
         datas = shoppingCarDataBean.getDatas();
+        Log.d(TAG, "store: " + shoppingCarDataBean.getDatas());
+
 
         initExpandableListViewData(datas);
     }

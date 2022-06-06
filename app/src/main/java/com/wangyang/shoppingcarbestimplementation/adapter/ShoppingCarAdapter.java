@@ -1,6 +1,7 @@
 package com.wangyang.shoppingcarbestimplementation.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -27,6 +28,8 @@ import butterknife.BindView;
  * 因为使用的是ExpandableListView，所以继承BaseExpandableListAdapter
  */
 public class ShoppingCarAdapter extends BaseExpandableListAdapter {
+
+    private static final String TAG = "ShoppingCarAdapter";
 
     private final Context context;
     private final LinearLayout llSelectAll;
@@ -97,6 +100,7 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
         final ShoppingCarDataBean.DatasBean datasBean = data.get(groupPosition);
         //店铺ID
         String store_id = datasBean.getStore_id();
+        Log.d(TAG, "getGroupView: " + store_id);
         //店铺名称
         String store_name = datasBean.getStore_name();
 
